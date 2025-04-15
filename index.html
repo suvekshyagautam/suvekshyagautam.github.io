@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Personal Portfolio</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        
+        body {
+            background-color: #ffffff;
+            color: #333333;
+            line-height: 1.6;
+        }
+        
+        a {
+            color: #333333;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            margin-bottom: 60px;
+        }
+        
+        .logo a {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: -0.5px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            font-size: 16px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            margin-bottom: 80px;
+        }
+        
+        h1 {
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+        
+        .hero-links a {
+            margin-right: 20px;
+            font-weight: 500;
+            position: relative;
+        }
+        
+        .hero-links a::after {
+            content: '→';
+            margin-left: 4px;
+        }
+        
+        /* Projects Section */
+        .projects {
+            margin-bottom: 80px;
+        }
+        
+        h2 {
+            font-size: 24px;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+        
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+        
+        .project-card {
+            border: 1px solid #eaeaea;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .project-image {
+            width: 100%;
+            height: 200px;
+            background-color: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .project-info {
+            padding: 20px;
+        }
+        
+        .project-info h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        .project-info p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .tag {
+            display: inline-block;
+            background-color: #f5f5f5;
+            padding: 4px 10px;
+            border-radius: 100px;
+            font-size: 12px;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+        
+        /* About Section */
+        .about {
+            margin-bottom: 80px;
+        }
+        
+        .about p {
+            margin-bottom: 20px;
+            max-width: 700px;
+        }
+        
+        /* Experience Section */
+        .experience {
+            margin-bottom: 80px;
+        }
+        
+        .experience-item {
+            margin-bottom: 30px;
+        }
+        
+        .experience-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .experience-company {
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        
+        .experience-date {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        
+        /* Contact Section */
+        .contact p {
+            margin-bottom: 20px;
+        }
+        
+        .contact-links a {
+            margin-right: 20px;
+            font-weight: 500;
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 36px;
+            }
+            
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+            }
+            
+            nav ul li:first-child {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <a href="#">Your Name</a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <section class="hero">
+            <h1>Hi, I'm Your Name.<br>I'm a [Your Title].</h1>
+            <p>I specialize in [your specialties]. Currently, I'm [current position or focus]. Previously, I worked at [previous company/experience].</p>
+            <div class="hero-links">
+                <a href="#projects">View my work</a>
+                <a href="#contact">Get in touch</a>
+            </div>
+        </section>
+        
+        <section id="projects" class="projects">
+            <h2>Featured Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="/api/placeholder/400/200" alt="Project 1">
+                    </div>
+                    <div class="project-info">
+                        <h3>Project One</h3>
+                        <p>A brief description of this project and your role in it. What problems did it solve?</p>
+                        <div class="project-tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="/api/placeholder/400/200" alt="Project 2">
+                    </div>
+                    <div class="project-info">
+                        <h3>Project Two</h3>
+                        <p>A brief description of this project and your role in it. What problems did it solve?</p>
+                        <div class="project-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">Node.js</span>
+                            <span class="tag">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="/api/placeholder/400/200" alt="Project 3">
+                    </div>
+                    <div class="project-info">
+                        <h3>Project Three</h3>
+                        <p>A brief description of this project and your role in it. What problems did it solve?</p>
+                        <div class="project-tags">
+                            <span class="tag">UI/UX</span>
+                            <span class="tag">Figma</span>
+                            <span class="tag">User Research</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="/api/placeholder/400/200" alt="Project 4">
+                    </div>
+                    <div class="project-info">
+                        <h3>Project Four</h3>
+                        <p>A brief description of this project and your role in it. What problems did it solve?</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Data Analysis</span>
+                            <span class="tag">Machine Learning</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="about" class="about">
+            <h2>About Me</h2>
+            <p>This is a section about you. Share your background, education, interests, and what drives your work. What makes you unique? What perspective do you bring to your projects?</p>
+            <p>You might want to share some personal details too, like hobbies or interests outside of work. This helps visitors connect with you on a more personal level.</p>
+            <p>Don't forget to mention your values and what you're passionate about in your field. What problems are you interested in solving?</p>
+        </section>
+        
+        <section id="experience" class="experience">
+            <h2>Experience</h2>
+            
+            <div class="experience-item">
+                <div class="experience-title">Senior Role Title</div>
+                <div class="experience-company">Company Name</div>
+                <div class="experience-date">January 2022 - Present</div>
+                <p>Description of your responsibilities and achievements in this role. What projects did you work on? What impact did you make?</p>
+            </div>
+            
+            <div class="experience-item">
+                <div class="experience-title">Previous Role Title</div>
+                <div class="experience-company">Previous Company</div>
+                <div class="experience-date">March 2019 - December 2021</div>
+                <p>Description of your responsibilities and achievements in this role. What projects did you work on? What impact did you make?</p>
+            </div>
+            
+            <div class="experience-item">
+                <div class="experience-title">Entry Level Role</div>
+                <div class="experience-company">First Company</div>
+                <div class="experience-date">June 2017 - February 2019</div>
+                <p>Description of your responsibilities and achievements in this role. What projects did you work on? What impact did you make?</p>
+            </div>
+        </section>
+        
+        <section id="contact" class="contact">
+            <h2>Get In Touch</h2>
+            <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
+            <div class="contact-links">
+                <a href="mailto:your.email@example.com">Email</a>
+                <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+                <a href="https://twitter.com/yourhandle" target="_blank">Twitter</a>
+                <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <p>© 2025 Your Name. All rights reserved.</p>
+    </footer>
+</body>
+</html>
