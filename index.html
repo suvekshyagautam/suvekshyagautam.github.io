@@ -1,65 +1,545 @@
----
-layout: home
-title: "Suvekshya Gautam"
----
-
-<!-- ================== Intro ================== -->
-## 👋 Hi, I’m Suvekshya Gautam
-
-I’m a Ph.D. candidate in Economics at the University of Washington and a Graduate Research Assistant at the Center for Education Data & Research. I study labor markets, gender, and policy using experimental and quasi-experimental methods.
-
-📫 Contact: [sgautam9@uw.edu](mailto:sgautam9@uw.edu)  
-🔗 [CV](assets/cv/Suvekshya_Gautam_CV.pdf) · [Google Scholar](#) · [GitHub](https://github.com/suvekshyagautam)
-
----
-
-<!-- ================== Research ================== -->
-## 📚 Research
-
-### Gender-Differentiated Labor Market Effects of Industry Shocks  
-I estimate the differential impact of male- and female-weighted wage shocks on local labor markets. Using a shift-share instrument and TWFE regression, I find substantial gender heterogeneity in district-level labor outcomes.
-
-### Experimental Work on Strategic Decision-Making  
-I’m running an experiment comparing two strategically similar games to examine how perceived question similarity affects participant behavior. This work informs experimental design for policy applications.
-
----
-
-<!-- ================== Experience ================== -->
-## 💼 Experience
-
-### Graduate Research Assistant  
-**Center for Education Data & Research (CEDR), University of Washington**  
-*2022 – Present*  
-- Conducted empirical research using administrative education data  
-- Built Stata/R code for shift-share and difference-in-differences models  
-- Co-authored reports for state policy audiences  
-
-### Teaching Assistant  
-**Department of Economics, University of Washington**  
-*2021 – Present*  
-- Led weekly sections in microeconomics, econometrics  
-- Supported students with statistical programming in R and Stata  
-- Designed assignments and held office hours  
-
----
-
-<!-- ================== Hiking ================== -->
-## 🏞️ Hiking Adventures
-
-I love exploring trails in the Pacific Northwest. A few favorites:
-
-### Mount Rainier – Skyline Trail  
-![Skyline Trail](assets/img/hiking/skyline.jpg){: width="400" }
-
-### North Cascades – Maple Pass Loop  
-![Maple Pass](assets/img/hiking/maplepass.jpg){: width="400" }
-
-### Olympic Peninsula – Hoh Rain Forest  
-![Hoh Rain Forest](assets/img/hiking/hoh.jpg){: width="400" }
-
-Stay tuned for more trail stories!
-
----
-
-<!-- Optional footer -->
-_This site is powered by [al-folio](https://github.com/alshedivat/al-folio) and GitHub Pages._
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suvekshya Gautam - Development Economist</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        
+        body {
+            background-color: #ffffff;
+            color: #333333;
+            line-height: 1.6;
+        }
+        
+        a {
+            color: #333333;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            margin-bottom: 60px;
+        }
+        
+        .logo a {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: -0.5px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            font-size: 16px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            margin-bottom: 80px;
+        }
+        
+        h1 {
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+        
+        .hero-links a {
+            margin-right: 20px;
+            font-weight: 500;
+            position: relative;
+        }
+        
+        .hero-links a::after {
+            content: '→';
+            margin-left: 4px;
+        }
+        
+        /* Research Section */
+        .research {
+            margin-bottom: 80px;
+        }
+        
+        h2 {
+            font-size: 24px;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+        
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+        
+        .research-card {
+            border: 1px solid #eaeaea;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        
+        .research-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .research-image {
+            width: 100%;
+            height: 200px;
+            background-color: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .research-info {
+            padding: 20px;
+        }
+        
+        .research-info h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        .research-info p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .tag {
+            display: inline-block;
+            background-color: #f5f5f5;
+            padding: 4px 10px;
+            border-radius: 100px;
+            font-size: 12px;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+        
+        /* About Section */
+        .about {
+            margin-bottom: 80px;
+        }
+        
+        .about p {
+            margin-bottom: 20px;
+            max-width: 700px;
+        }
+        
+        /* Experience Section */
+        .experience {
+            margin-bottom: 80px;
+        }
+        
+        .experience-item {
+            margin-bottom: 30px;
+        }
+        
+        .experience-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .experience-company {
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        
+        .experience-date {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        
+        /* Education Section */
+        .education {
+            margin-bottom: 80px;
+        }
+        
+        .education-item {
+            margin-bottom: 30px;
+        }
+        
+        .education-degree {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .education-institution {
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        
+        .education-date {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        
+        /* Skills Section */
+        .skills {
+            margin-bottom: 80px;
+        }
+        
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .skills-category {
+            margin-bottom: 20px;
+        }
+        
+        .skills-category h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        /* Contact Section */
+        .contact p {
+            margin-bottom: 20px;
+        }
+        
+        .contact-links a {
+            margin-right: 20px;
+            font-weight: 500;
+        }
+        
+        .download-cv {
+            display: inline-block;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-weight: 500;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .download-cv:hover {
+            background-color: #555;
+            text-decoration: none;
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 36px;
+            }
+            
+            .research-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+            }
+            
+            nav ul li:first-child {
+                margin-left: 0;
+            }
+            
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <a href="#">Suvekshya Gautam</a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#research">Research</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <section class="hero">
+            <h1>Hi, I'm Suvekshya Gautam.<br>Development Economist</h1>
+            <p>With 7+ years of experience conducting field research, impact evaluations, and data analysis across low- and middle-income countries. Expert in designing field experiments, applying advanced econometric methods, and translating evidence into policy.</p>
+            <div class="hero-links">
+                <a href="#research">View my research</a>
+                <a href="#contact">Get in touch</a>
+                <a href="assets/CV_Suvekshya.pdf" download>Download CV</a>
+            </div>
+        </section>
+        
+        <section id="research" class="research">
+            <h2>Research</h2>
+            <div class="research-grid">
+                <div class="research-card">
+                    <div class="research-image">
+                        <img src="/api/placeholder/400/200" alt="Course Corrections Research">
+                    </div>
+                    <div class="research-info">
+                        <h3>Course Corrections? The Labor Market Returns to Correctional Education Credentials</h3>
+                        <p>With Dan Goldhaber and James Cowan (Revise and Resubmit)</p>
+                        <div class="research-tags">
+                            <span class="tag">Education Economics</span>
+                            <span class="tag">Labor Market</span>
+                            <span class="tag">Econometrics</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="research-card">
+                    <div class="research-image">
+                        <img src="/api/placeholder/400/200" alt="Mobile Money Research">
+                    </div>
+                    <div class="research-info">
+                        <h3>Mobile money and women's empowerment: a lab-in-the-field experiment</h3>
+                        <p>With Emma Riley (Work in Progress)</p>
+                        <div class="research-tags">
+                            <span class="tag">Financial Inclusion</span>
+                            <span class="tag">Gender Economics</span>
+                            <span class="tag">Field Experiment</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="research-card">
+                    <div class="research-image">
+                        <img src="/api/placeholder/400/200" alt="AI in Education">
+                    </div>
+                    <div class="research-info">
+                        <h3>Integrating AI in remedial education- A pilot study in Nepal</h3>
+                        <p>Work in Progress</p>
+                        <div class="research-tags">
+                            <span class="tag">Education Technology</span>
+                            <span class="tag">AI</span>
+                            <span class="tag">Development</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="research-card">
+                    <div class="research-image">
+                        <img src="/api/placeholder/400/200" alt="Academic Mobility Research">
+                    </div>
+                    <div class="research-info">
+                        <h3>Assessing the Academic Mobility on Test and Non-test Outcomes</h3>
+                        <p>With Dan Goldhaber and Stephanie Liddle (Work in Progress)</p>
+                        <div class="research-tags">
+                            <span class="tag">Education Policy</span>
+                            <span class="tag">Student Outcomes</span>
+                            <span class="tag">Longitudinal Analysis</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="about" class="about">
+            <h2>About Me</h2>
+            <p>I am a development economist currently pursuing my PhD in Economics at the University of Washington with a focus on Development Economics and Econometrics. My research interests center on financial inclusion, gender economics, education policy, and labor markets in low and middle-income countries.</p>
+            <p>With over 7 years of experience, I have conducted field research and impact evaluations across multiple countries, developing expertise in experimental design, econometric analysis, and policy-relevant research. I am passionate about using rigorous empirical methods to address development challenges and inform evidence-based policies.</p>
+            <p>I have collaborated with academic institutions, multilateral organizations like UNESCO, and non-profit research centers. My work bridges academic research and practical policy applications, with a commitment to improving economic opportunities and outcomes in developing contexts.</p>
+        </section>
+        
+        <section id="experience" class="experience">
+            <h2>Experience</h2>
+            
+            <div class="experience-item">
+                <div class="experience-title">Graduate Research Assistant</div>
+                <div class="experience-company">Center for Education Data & Research</div>
+                <div class="experience-date">November 2021 - Present</div>
+                <p>Conduct longitudinal analyses on student achievement, mobility, post-secondary, and labor market outcomes to evaluate the impact of educational interventions. Apply econometric models and utilize STATA and R for data analysis, statistical modeling, and visualization to derive robust, policy-relevant insights.</p>
+            </div>
+            
+            <div class="experience-item">
+                <div class="experience-title">Graduate Research Assistant</div>
+                <div class="experience-company">University of Washington</div>
+                <div class="experience-date">June 2022 - September 2024</div>
+                <p>Led data analysis for research projects across LMICs, focusing on financial inclusion, gender, and labor markets. Designed survey instruments and experimental protocols for field implementation with international teams. Conducted high-frequency survey checks to improve data quality and implemented reproducible STATA workflows for data cleaning and analysis.</p>
+            </div>
+            
+            <div class="experience-item">
+                <div class="experience-title">Research Associate</div>
+                <div class="experience-company">BBC Research & Consulting</div>
+                <div class="experience-date">February 2020 - September 2020</div>
+                <p>Conducted disparity analysis for Minority- and Women-Owned Businesses on federal and state-level contracts, identifying procurement disparities and systemic barriers. Managed data processes using STATA, R, and SQL, transforming raw data into actionable policy insights.</p>
+            </div>
+            
+            <div class="experience-item">
+                <div class="experience-title">Research Fellow</div>
+                <div class="experience-company">Colorado Center on Law and Policy</div>
+                <div class="experience-date">November 2019 - March 2020</div>
+                <p>Received grant funding from the Women's Foundation of Colorado by developing a successful proposal on women's economic security, outlining a mixed-methods research design. Conducted data analysis and a comprehensive desk review of state and national policies to examine intersectional barriers to women's economic advancement.</p>
+            </div>
+            
+            <div class="experience-item">
+                <div class="experience-title">Consultant</div>
+                <div class="experience-company">UNESCO</div>
+                <div class="experience-date">July 2017 - May 2018</div>
+                <p>Analyzed education policies across eight SAARC nations, identifying regional trends and country-specific challenges for SDG 4 monitoring. Developed simulation models to forecast Bhutan's education funding gap, contributing to successful Education Sector Program grant proposals.</p>
+            </div>
+            
+            <div class="experience-item">
+                <div class="experience-title">Research Associate</div>
+                <div class="experience-company">Social Science Baha</div>
+                <div class="experience-date">November 2016 - July 2017</div>
+                <p>Developed baseline report on health services reconstruction in post-earthquake Nepal, leading data collection and analysis. Conducted mixed-methods analysis for studies on female returnee migrants, contributing to policy reports that informed reintegration efforts.</p>
+            </div>
+        </section>
+        
+        <section id="education" class="education">
+            <h2>Education</h2>
+            
+            <div class="education-item">
+                <div class="education-degree">PhD in Economics</div>
+                <div class="education-institution">University of Washington - Seattle</div>
+                <div class="education-date">Ongoing</div>
+                <p>Fields: Development Economics and Econometrics</p>
+            </div>
+            
+            <div class="education-item">
+                <div class="education-degree">Master of Arts in Development Economics</div>
+                <div class="education-institution">South Asian University – New Delhi, India</div>
+                <div class="education-date">June 2016</div>
+                <p>Silver Jubilee Scholarship Scheme under SAARC collaboration</p>
+            </div>
+            
+            <div class="education-item">
+                <div class="education-degree">Bachelor of Commerce (Honors)</div>
+                <div class="education-institution">University of Delhi — Lady Shri Ram College for Women – New Delhi, India</div>
+                <div class="education-date">June 2013</div>
+                <p>General Cultural Scholarship Scheme by ICCR</p>
+            </div>
+        </section>
+        
+        <section id="skills" class="skills">
+            <h2>Skills</h2>
+            
+            <div class="skills-container">
+                <div class="skills-category">
+                    <h3>Research Methods</h3>
+                    <div class="skills-list">
+                        <span class="tag">Causal Inference</span>
+                        <span class="tag">Econometric Analysis</span>
+                        <span class="tag">Survey Design</span>
+                        <span class="tag">Impact Evaluation</span>
+                        <span class="tag">Qualitative Research</span>
+                        <span class="tag">Mixed Methods</span>
+                    </div>
+                </div>
+                
+                <div class="skills-category">
+                    <h3>Policy Areas</h3>
+                    <div class="skills-list">
+                        <span class="tag">Development Economics</span>
+                        <span class="tag">Education Policy</span>
+                        <span class="tag">Labor</span>
+                        <span class="tag">Financial Inclusion</span>
+                        <span class="tag">Gender</span>
+                    </div>
+                </div>
+                
+                <div class="skills-category">
+                    <h3>Technical</h3>
+                    <div class="skills-list">
+                        <span class="tag">STATA</span>
+                        <span class="tag">LaTeX</span>
+                        <span class="tag">R</span>
+                        <span class="tag">SQL</span>
+                        <span class="tag">MATLAB</span>
+                        <span class="tag">SPSS</span>
+                        <span class="tag">NVivo</span>
+                        <span class="tag">Atlas.ti</span>
+                        <span class="tag">Tableau</span>
+                    </div>
+                </div>
+                
+                <div class="skills-category">
+                    <h3>Languages</h3>
+                    <div class="skills-list">
+                        <span class="tag">Nepali (Native)</span>
+                        <span class="tag">English (Advanced)</span>
+                        <span class="tag">Hindi (Advanced)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contact" class="contact">
+            <h2>Get In Touch</h2>
+            <p>I'm interested in collaborating on research projects, discussing development economics, or exploring opportunities in academia and policy research.</p>
+            <div class="contact-links">
+                <a href="mailto:sgautam9@uw.edu">Email</a>
+                <a href="https://linkedin.com/in/suvekshya-gautam" target="_blank">LinkedIn</a>
+            </div>
+            <a href="assets/CV_Suvekshya.pdf" download class="download-cv">Download CV</a>
+        </section>
+    </div>
+    
+    <footer>
+        <p>© 2025 Suvekshya Gautam. All rights reserved.</p>
+    </footer>
+</body>
+</html>
