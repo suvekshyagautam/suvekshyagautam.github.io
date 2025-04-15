@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Personal Portfolio</title>
+    <title>Suvekshya Gautam - Development Economist</title>
     <style>
         /* Reset and base styles */
         * {
@@ -93,8 +93,8 @@
             margin-left: 4px;
         }
         
-        /* Projects Section */
-        .projects {
+        /* Research Section */
+        .research {
             margin-bottom: 80px;
         }
         
@@ -104,24 +104,24 @@
             font-weight: 600;
         }
         
-        .project-grid {
+        .research-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 30px;
         }
         
-        .project-card {
+        .research-card {
             border: 1px solid #eaeaea;
             border-radius: 8px;
             overflow: hidden;
             transition: transform 0.3s ease;
         }
         
-        .project-card:hover {
+        .research-card:hover {
             transform: translateY(-5px);
         }
         
-        .project-image {
+        .research-image {
             width: 100%;
             height: 200px;
             background-color: #f5f5f5;
@@ -130,16 +130,16 @@
             justify-content: center;
         }
         
-        .project-info {
+        .research-info {
             padding: 20px;
         }
         
-        .project-info h3 {
+        .research-info h3 {
             font-size: 18px;
             margin-bottom: 10px;
         }
         
-        .project-info p {
+        .research-info p {
             font-size: 14px;
             color: #666;
             margin-bottom: 15px;
@@ -190,6 +190,56 @@
             margin-bottom: 10px;
         }
         
+        /* Education Section */
+        .education {
+            margin-bottom: 80px;
+        }
+        
+        .education-item {
+            margin-bottom: 30px;
+        }
+        
+        .education-degree {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .education-institution {
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        
+        .education-date {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        
+        /* Skills Section */
+        .skills {
+            margin-bottom: 80px;
+        }
+        
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .skills-category {
+            margin-bottom: 20px;
+        }
+        
+        .skills-category h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
         /* Contact Section */
         .contact p {
             margin-bottom: 20px;
@@ -198,6 +248,22 @@
         .contact-links a {
             margin-right: 20px;
             font-weight: 500;
+        }
+        
+        .download-cv {
+            display: inline-block;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-weight: 500;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .download-cv:hover {
+            background-color: #555;
+            text-decoration: none;
         }
         
         /* Footer */
@@ -214,7 +280,7 @@
                 font-size: 36px;
             }
             
-            .project-grid {
+            .research-grid {
                 grid-template-columns: 1fr;
             }
             
@@ -230,6 +296,10 @@
             nav ul li:first-child {
                 margin-left: 0;
             }
+            
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -237,86 +307,89 @@
     <div class="container">
         <header>
             <div class="logo">
-                <a href="#">Your Name</a>
+                <a href="#">Suvekshya Gautam</a>
             </div>
             <nav>
                 <ul>
-                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#research">Research</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#experience">Experience</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#skills">Skills</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </header>
         
         <section class="hero">
-            <h1>Hi, I'm Your Name.<br>I'm a [Your Title].</h1>
-            <p>I specialize in [your specialties]. Currently, I'm [current position or focus]. Previously, I worked at [previous company/experience].</p>
+            <h1>Hi, I'm Suvekshya Gautam.<br>Development Economist</h1>
+            <p>With 7+ years of experience conducting field research, impact evaluations, and data analysis across low- and middle-income countries. Expert in designing field experiments, applying advanced econometric methods, and translating evidence into policy.</p>
             <div class="hero-links">
-                <a href="#projects">View my work</a>
+                <a href="#research">View my research</a>
                 <a href="#contact">Get in touch</a>
+                <a href="assets/CV_Suvekshya.pdf" download>Download CV</a>
             </div>
         </section>
         
-        <section id="projects" class="projects">
-            <h2>Featured Projects</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="/api/placeholder/400/200" alt="Project 1">
+        <section id="research" class="research">
+            <h2>Research</h2>
+            <div class="research-grid">
+                <div class="research-card">
+                    <div class="research-image">
+                        <img src="/api/placeholder/400/200" alt="Course Corrections Research">
                     </div>
-                    <div class="project-info">
-                        <h3>Project One</h3>
-                        <p>A brief description of this project and your role in it. What problems did it solve?</p>
-                        <div class="project-tags">
-                            <span class="tag">HTML</span>
-                            <span class="tag">CSS</span>
-                            <span class="tag">JavaScript</span>
+                    <div class="research-info">
+                        <h3>Course Corrections? The Labor Market Returns to Correctional Education Credentials</h3>
+                        <p>With Dan Goldhaber and James Cowan (Revise and Resubmit)</p>
+                        <div class="research-tags">
+                            <span class="tag">Education Economics</span>
+                            <span class="tag">Labor Market</span>
+                            <span class="tag">Econometrics</span>
                         </div>
                     </div>
                 </div>
                 
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="/api/placeholder/400/200" alt="Project 2">
+                <div class="research-card">
+                    <div class="research-image">
+                        <img src="/api/placeholder/400/200" alt="Mobile Money Research">
                     </div>
-                    <div class="project-info">
-                        <h3>Project Two</h3>
-                        <p>A brief description of this project and your role in it. What problems did it solve?</p>
-                        <div class="project-tags">
-                            <span class="tag">React</span>
-                            <span class="tag">Node.js</span>
-                            <span class="tag">MongoDB</span>
+                    <div class="research-info">
+                        <h3>Mobile money and women's empowerment: a lab-in-the-field experiment</h3>
+                        <p>With Emma Riley (Work in Progress)</p>
+                        <div class="research-tags">
+                            <span class="tag">Financial Inclusion</span>
+                            <span class="tag">Gender Economics</span>
+                            <span class="tag">Field Experiment</span>
                         </div>
                     </div>
                 </div>
                 
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="/api/placeholder/400/200" alt="Project 3">
+                <div class="research-card">
+                    <div class="research-image">
+                        <img src="/api/placeholder/400/200" alt="AI in Education">
                     </div>
-                    <div class="project-info">
-                        <h3>Project Three</h3>
-                        <p>A brief description of this project and your role in it. What problems did it solve?</p>
-                        <div class="project-tags">
-                            <span class="tag">UI/UX</span>
-                            <span class="tag">Figma</span>
-                            <span class="tag">User Research</span>
+                    <div class="research-info">
+                        <h3>Integrating AI in remedial education- A pilot study in Nepal</h3>
+                        <p>Work in Progress</p>
+                        <div class="research-tags">
+                            <span class="tag">Education Technology</span>
+                            <span class="tag">AI</span>
+                            <span class="tag">Development</span>
                         </div>
                     </div>
                 </div>
                 
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="/api/placeholder/400/200" alt="Project 4">
+                <div class="research-card">
+                    <div class="research-image">
+                        <img src="/api/placeholder/400/200" alt="Academic Mobility Research">
                     </div>
-                    <div class="project-info">
-                        <h3>Project Four</h3>
-                        <p>A brief description of this project and your role in it. What problems did it solve?</p>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">Data Analysis</span>
-                            <span class="tag">Machine Learning</span>
+                    <div class="research-info">
+                        <h3>Assessing the Academic Mobility on Test and Non-test Outcomes</h3>
+                        <p>With Dan Goldhaber and Stephanie Liddle (Work in Progress)</p>
+                        <div class="research-tags">
+                            <span class="tag">Education Policy</span>
+                            <span class="tag">Student Outcomes</span>
+                            <span class="tag">Longitudinal Analysis</span>
                         </div>
                     </div>
                 </div>
@@ -325,50 +398,148 @@
         
         <section id="about" class="about">
             <h2>About Me</h2>
-            <p>This is a section about you. Share your background, education, interests, and what drives your work. What makes you unique? What perspective do you bring to your projects?</p>
-            <p>You might want to share some personal details too, like hobbies or interests outside of work. This helps visitors connect with you on a more personal level.</p>
-            <p>Don't forget to mention your values and what you're passionate about in your field. What problems are you interested in solving?</p>
+            <p>I am a development economist currently pursuing my PhD in Economics at the University of Washington with a focus on Development Economics and Econometrics. My research interests center on financial inclusion, gender economics, education policy, and labor markets in low and middle-income countries.</p>
+            <p>With over 7 years of experience, I have conducted field research and impact evaluations across multiple countries, developing expertise in experimental design, econometric analysis, and policy-relevant research. I am passionate about using rigorous empirical methods to address development challenges and inform evidence-based policies.</p>
+            <p>I have collaborated with academic institutions, multilateral organizations like UNESCO, and non-profit research centers. My work bridges academic research and practical policy applications, with a commitment to improving economic opportunities and outcomes in developing contexts.</p>
         </section>
         
         <section id="experience" class="experience">
             <h2>Experience</h2>
             
             <div class="experience-item">
-                <div class="experience-title">Senior Role Title</div>
-                <div class="experience-company">Company Name</div>
-                <div class="experience-date">January 2022 - Present</div>
-                <p>Description of your responsibilities and achievements in this role. What projects did you work on? What impact did you make?</p>
+                <div class="experience-title">Graduate Research Assistant</div>
+                <div class="experience-company">Center for Education Data & Research</div>
+                <div class="experience-date">November 2021 - Present</div>
+                <p>Conduct longitudinal analyses on student achievement, mobility, post-secondary, and labor market outcomes to evaluate the impact of educational interventions. Apply econometric models and utilize STATA and R for data analysis, statistical modeling, and visualization to derive robust, policy-relevant insights.</p>
             </div>
             
             <div class="experience-item">
-                <div class="experience-title">Previous Role Title</div>
-                <div class="experience-company">Previous Company</div>
-                <div class="experience-date">March 2019 - December 2021</div>
-                <p>Description of your responsibilities and achievements in this role. What projects did you work on? What impact did you make?</p>
+                <div class="experience-title">Graduate Research Assistant</div>
+                <div class="experience-company">University of Washington</div>
+                <div class="experience-date">June 2022 - September 2024</div>
+                <p>Led data analysis for research projects across LMICs, focusing on financial inclusion, gender, and labor markets. Designed survey instruments and experimental protocols for field implementation with international teams. Conducted high-frequency survey checks to improve data quality and implemented reproducible STATA workflows for data cleaning and analysis.</p>
             </div>
             
             <div class="experience-item">
-                <div class="experience-title">Entry Level Role</div>
-                <div class="experience-company">First Company</div>
-                <div class="experience-date">June 2017 - February 2019</div>
-                <p>Description of your responsibilities and achievements in this role. What projects did you work on? What impact did you make?</p>
+                <div class="experience-title">Research Associate</div>
+                <div class="experience-company">BBC Research & Consulting</div>
+                <div class="experience-date">February 2020 - September 2020</div>
+                <p>Conducted disparity analysis for Minority- and Women-Owned Businesses on federal and state-level contracts, identifying procurement disparities and systemic barriers. Managed data processes using STATA, R, and SQL, transforming raw data into actionable policy insights.</p>
+            </div>
+            
+            <div class="experience-item">
+                <div class="experience-title">Research Fellow</div>
+                <div class="experience-company">Colorado Center on Law and Policy</div>
+                <div class="experience-date">November 2019 - March 2020</div>
+                <p>Received grant funding from the Women's Foundation of Colorado by developing a successful proposal on women's economic security, outlining a mixed-methods research design. Conducted data analysis and a comprehensive desk review of state and national policies to examine intersectional barriers to women's economic advancement.</p>
+            </div>
+            
+            <div class="experience-item">
+                <div class="experience-title">Consultant</div>
+                <div class="experience-company">UNESCO</div>
+                <div class="experience-date">July 2017 - May 2018</div>
+                <p>Analyzed education policies across eight SAARC nations, identifying regional trends and country-specific challenges for SDG 4 monitoring. Developed simulation models to forecast Bhutan's education funding gap, contributing to successful Education Sector Program grant proposals.</p>
+            </div>
+            
+            <div class="experience-item">
+                <div class="experience-title">Research Associate</div>
+                <div class="experience-company">Social Science Baha</div>
+                <div class="experience-date">November 2016 - July 2017</div>
+                <p>Developed baseline report on health services reconstruction in post-earthquake Nepal, leading data collection and analysis. Conducted mixed-methods analysis for studies on female returnee migrants, contributing to policy reports that informed reintegration efforts.</p>
+            </div>
+        </section>
+        
+        <section id="education" class="education">
+            <h2>Education</h2>
+            
+            <div class="education-item">
+                <div class="education-degree">PhD in Economics</div>
+                <div class="education-institution">University of Washington - Seattle</div>
+                <div class="education-date">Ongoing</div>
+                <p>Fields: Development Economics and Econometrics</p>
+            </div>
+            
+            <div class="education-item">
+                <div class="education-degree">Master of Arts in Development Economics</div>
+                <div class="education-institution">South Asian University – New Delhi, India</div>
+                <div class="education-date">June 2016</div>
+                <p>Silver Jubilee Scholarship Scheme under SAARC collaboration</p>
+            </div>
+            
+            <div class="education-item">
+                <div class="education-degree">Bachelor of Commerce (Honors)</div>
+                <div class="education-institution">University of Delhi — Lady Shri Ram College for Women – New Delhi, India</div>
+                <div class="education-date">June 2013</div>
+                <p>General Cultural Scholarship Scheme by ICCR</p>
+            </div>
+        </section>
+        
+        <section id="skills" class="skills">
+            <h2>Skills</h2>
+            
+            <div class="skills-container">
+                <div class="skills-category">
+                    <h3>Research Methods</h3>
+                    <div class="skills-list">
+                        <span class="tag">Causal Inference</span>
+                        <span class="tag">Econometric Analysis</span>
+                        <span class="tag">Survey Design</span>
+                        <span class="tag">Impact Evaluation</span>
+                        <span class="tag">Qualitative Research</span>
+                        <span class="tag">Mixed Methods</span>
+                    </div>
+                </div>
+                
+                <div class="skills-category">
+                    <h3>Policy Areas</h3>
+                    <div class="skills-list">
+                        <span class="tag">Development Economics</span>
+                        <span class="tag">Education Policy</span>
+                        <span class="tag">Labor</span>
+                        <span class="tag">Financial Inclusion</span>
+                        <span class="tag">Gender</span>
+                    </div>
+                </div>
+                
+                <div class="skills-category">
+                    <h3>Technical</h3>
+                    <div class="skills-list">
+                        <span class="tag">STATA</span>
+                        <span class="tag">LaTeX</span>
+                        <span class="tag">R</span>
+                        <span class="tag">SQL</span>
+                        <span class="tag">MATLAB</span>
+                        <span class="tag">SPSS</span>
+                        <span class="tag">NVivo</span>
+                        <span class="tag">Atlas.ti</span>
+                        <span class="tag">Tableau</span>
+                    </div>
+                </div>
+                
+                <div class="skills-category">
+                    <h3>Languages</h3>
+                    <div class="skills-list">
+                        <span class="tag">Nepali (Native)</span>
+                        <span class="tag">English (Advanced)</span>
+                        <span class="tag">Hindi (Advanced)</span>
+                    </div>
+                </div>
             </div>
         </section>
         
         <section id="contact" class="contact">
             <h2>Get In Touch</h2>
-            <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
+            <p>I'm interested in collaborating on research projects, discussing development economics, or exploring opportunities in academia and policy research.</p>
             <div class="contact-links">
-                <a href="mailto:your.email@example.com">Email</a>
-                <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
-                <a href="https://twitter.com/yourhandle" target="_blank">Twitter</a>
-                <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+                <a href="mailto:sgautam9@uw.edu">Email</a>
+                <a href="https://linkedin.com/in/suvekshya-gautam" target="_blank">LinkedIn</a>
             </div>
+            <a href="assets/CV_Suvekshya.pdf" download class="download-cv">Download CV</a>
         </section>
     </div>
     
     <footer>
-        <p>© 2025 Your Name. All rights reserved.</p>
+        <p>© 2025 Suvekshya Gautam. All rights reserved.</p>
     </footer>
 </body>
 </html>
