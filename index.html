@@ -304,6 +304,11 @@
             border-bottom: 1px solid #333;
         }
         
+        /* Section headers */
+        .section-header {
+            margin-bottom: 40px;
+        }
+        
         /* Footer */
         footer {
             text-align: center;
@@ -392,7 +397,9 @@
         </section>
         
         <section id="research">
-            <h2>Research</h2>
+            <div class="section-header">
+                <h2>Research</h2>
+            </div>
             
             <div class="research-item">
                 <div class="research-title">Course Corrections? The Labor Market Returns to Correctional Education Credentials</div>
@@ -467,7 +474,9 @@
         </section>
         
         <section id="teaching">
-            <h2>Teaching Experience</h2>
+            <div class="section-header">
+                <h2>Teaching Experience</h2>
+            </div>
             
             <div class="teaching-item">
                 <div class="course-title">ECON 447 A: Economics of Gender (Grader)</div>
@@ -513,7 +522,9 @@
         </section>
         
         <section id="experience">
-            <h2>Professional Experience</h2>
+            <div class="section-header">
+                <h2>Professional Experience</h2>
+            </div>
             
             <div class="experience-item">
                 <div class="experience-title">Graduate Research Assistant</div>
@@ -599,7 +610,9 @@
         </section>
         
         <section id="outdoors">
-            <h2>Outdoors</h2>
+            <div class="section-header">
+                <h2>Outdoors</h2>
+            </div>
             
             <div class="outdoors-text">
                 <p>Beyond research and academia, I enjoy exploring the natural beauty of the Pacific Northwest through hiking, photography, and outdoor activities. Here are some of my favorite moments and places.</p>
@@ -638,7 +651,9 @@
         </section>
 
         <section id="contact">
-            <h2>Contact</h2>
+            <div class="section-header">
+                <h2>Contact</h2>
+            </div>
             
             <div class="contact-info">
                 <div class="contact-item">
@@ -682,7 +697,9 @@
         </section>
         
         <section id="cv">
-            <h2>Curriculum Vitae</h2>
+            <div class="section-header">
+                <h2>Curriculum Vitae</h2>
+            </div>
             <p>My complete academic and professional background, including education, research experience, publications, and skills.</p>
             <a href="assets/CV_Suvekshya.pdf" download class="download-cv">Download CV</a>
         </section>
@@ -701,15 +718,4 @@
             });
             
             // Show the selected section
-            document.getElementById(sectionId).classList.add('active');
-        }
-        
-        // Handle direct links with hash
-        window.addEventListener('load', function() {
-            const hash = window.location.hash.substring(1);
-            if (hash && document.getElementById(hash)) {
-                showSection(hash);
-            }
-        });
-    </script>
-</body>
+            document.getElementById(sectionId).
