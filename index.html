@@ -362,22 +362,22 @@
 </head>
 <body>
     <div class="container">
-        <header>
-            <div class="logo">
-                <a href="#" onclick="showSection('home')">Suvekshya Gautam</a>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#" onclick="showSection('home')">Home</a></li>
-                    <li><a href="#" onclick="showSection('research')">Research</a></li>
-                    <li><a href="#" onclick="showSection('teaching')">Teaching</a></li>
-                    <li><a href="#" onclick="showSection('experience')">Experience</a></li>
-                    <li><a href="#" onclick="showSection('outdoors')">Outdoors</a></li>
-                    <li><a href="#" onclick="showSection('contact')">Contact</a></li>
-                    <li><a href="#" onclick="showSection('cv')">CV</a></li>
-                </ul>
-            </nav>
-        </header>
+      <header>
+    <div class="logo">
+        <a href="#" onclick="showSection('home', event)">Suvekshya Gautam</a>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="#" onclick="showSection('home', event)">Home</a></li>
+            <li><a href="#" onclick="showSection('research', event)">Research</a></li>
+            <li><a href="#" onclick="showSection('teaching', event)">Teaching</a></li>
+            <li><a href="#" onclick="showSection('experience', event)">Experience</a></li>
+            <li><a href="#" onclick="showSection('outdoors', event)">Outdoors</a></li>
+            <li><a href="#" onclick="showSection('contact', event)">Contact</a></li>
+            <li><a href="#" onclick="showSection('cv', event)">CV</a></li>
+        </ul>
+    </nav>
+</header>
         
         <section id="home" class="active">
             <div class="profile-content">
@@ -683,48 +683,55 @@
             <a href="assets/CV_Suvekshya.pdf" download class="download-cv">Download CV</a>
         </section>
     </div>
-    
     <footer>
         <p>© 2025 Suvekshya Gautam. All rights reserved.</p>
     </footer>
     
-// Function to show selected section and hide others
-function showSection(sectionId) {
-    // Hide all sections
-    document.querySelectorAll('section').forEach(function(section) {
-        section.classList.remove('active');
-    });
-    
-    // Show the selected section
-    document.getElementById(sectionId).classList.add('active');
-    
-    // Update URL hash for better navigation
-    window.location.hash = sectionId;
-    
-    // Prevent default behavior
-    event.preventDefault();
-}
-
-// Function to check URL hash on page load and show the appropriate section
-function checkHash() {
-    var hash = window.location.hash.substring(1);
-    if (hash && document.getElementById(hash)) {
+    <script>
+    // Function to show selected section and hide others
+    function showSection(sectionId, event) {
+        // Prevent default behavior first
+        if (event) {
+            event.preventDefault();
+        }
+        
         // Hide all sections
         document.querySelectorAll('section').forEach(function(section) {
             section.classList.remove('active');
         });
         
-        // Show the section corresponding to the hash
-        document.getElementById(hash).classList.add('active');
+        // Show the selected section
+        document.getElementById(sectionId).classList.add('active');
+        
+        // Update URL hash for better navigation
+        window.location.hash = sectionId;
     }
-}
 
-// Check hash on page load
-window.addEventListener('load', function() {
-    checkHash();
-});
+    // Function to check URL hash on page load and show the appropriate section
+    function checkHash() {
+        var hash = window.location.hash.substring(1);
+        if (hash && document.getElementById(hash)) {
+            // Hide all sections
+            document.querySelectorAll('section').forEach(function(section) {
+                section.classList.remove('active');
+            });
+            
+            // Show the section corresponding to the hash
+            document.getElementById(hash).classList.add('active');
+        }
+    }
 
-// Listen for hash changes
-window.addEventListener('hashchange', function() {
-    checkHash();
-});
+    // Check hash on page load
+    window.addEventListener('load', function() {
+        checkHash();
+    });
+
+    // Listen for hash changes
+    window.addEventListener('hashchange', function() {
+        checkHash();
+    });
+    </script>
+</body>
+</html>
+    
+
