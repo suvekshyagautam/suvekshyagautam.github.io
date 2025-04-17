@@ -28,11 +28,11 @@
             text-decoration: underline;
         }
         
-        /* Container - MODIFIED: Reduced top padding so header is visible */
+        /* Container - MODIFIED: Minimal top padding */
         .container {
             max-width: 900px;
             margin: 0 auto;
-            padding: 10px 20px 40px 20px; /* Reduced top padding from 40px to 10px */
+            padding: 0 20px 40px 20px; /* No top padding */
         }
         
         /* Header & Navigation */
@@ -41,7 +41,8 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px 0;
-            margin-bottom: 40px; /* Reduced from 60px to 40px */
+            margin-bottom: 30px; /* Reduced margin */
+            background-color: #ffffff; /* Ensure it has a background */
         }
         
         .logo a {
@@ -99,6 +100,7 @@
             align-items: center;
             gap: 30px;
             text-align: center;
+            padding-top: 20px; /* Add some space at the top */
         }
         
         .profile-content {
@@ -722,27 +724,32 @@ function showSection(sectionId, event) {
         selectedSection.style.display = 'block';
     }
     
-    // Update URL hash
-    window.location.hash = sectionId;
+    // Update URL hash but prevent automatic scrolling
+    history.pushState(null, null, '#' + sectionId);
 }
 
 // Handle initial page load
 window.onload = function() {
-    var hash = window.location.hash.substring(1);
-    if (hash && document.getElementById(hash)) {
-        showSection(hash);
+    // Remove hash from URL to prevent automatic scrolling
+    if (window.location.hash) {
+        var hash = window.location.hash.substring(1);
+        // Remove hash from URL without triggering scroll
+        history.pushState("", document.title, window.location.pathname);
+        // Then show the section
+        if (hash && document.getElementById(hash)) {
+            showSection(hash);
+        } else {
+            showSection('home');
+        }
     } else {
         showSection('home');
     }
+    
+    // Scroll to top of page
+    window.scrollTo(0, 0);
 };
 
-// Handle hash changes
-window.onhashchange = function() {
-    var hash = window.location.hash.substring(1);
-    if (hash && document.getElementById(hash)) {
-        showSection(hash);
-    }
-};
+// Don't use onhashchange since we're using pushState
 </script>
 
 </body>
