@@ -119,6 +119,7 @@
     margin-bottom: 20px;
     margin-left: auto; /* Add this line */
     margin-right: auto; /* Add this line */
+    text-align: justify; /* Add this line for justified text */
 }
         
         .home-links a {
@@ -341,10 +342,12 @@
                 margin-left: 0;
             }
             
-            #home {
-                flex-direction: column; /* Stack vertically on mobile */
-                text-align: center;
-            }
+       #home {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-direction: row-reverse; /* Image on the right, content on the left for desktop */
+}
             
             .home-links {
                 display: flex;
