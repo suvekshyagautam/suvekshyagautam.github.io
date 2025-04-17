@@ -687,55 +687,50 @@
         <p>© 2025 Suvekshya Gautam. All rights reserved.</p>
     </footer>
     
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Check hash on page load
-        handleHash();
-        
-        // Listen for hash changes
-        window.addEventListener('hashchange', handleHash);
-    });
-    </script>
+<script>
+// Function to show selected section and hide others
+function showSection(sectionId, event) {
+    // Prevent default behavior
+    if (event) {
+        event.preventDefault();
+    }
+    
+    // Hide all sections
+    var sections = document.querySelectorAll('section');
+    for (var i = 0; i < sections.length; i++) {
+        sections[i].classList.remove('active');
+        sections[i].style.display = 'none';
+    }
+    
+    // Show only the selected section
+    var selectedSection = document.getElementById(sectionId);
+    if (selectedSection) {
+        selectedSection.classList.add('active');
+        selectedSection.style.display = 'block';
+    }
+    
+    // Update URL hash
+    window.location.hash = sectionId;
+}
+
+// Handle initial page load
+window.onload = function() {
+    var hash = window.location.hash.substring(1);
+    if (hash && document.getElementById(hash)) {
+        showSection(hash);
+    } else {
+        showSection('home');
+    }
+};
+
+// Handle hash changes
+window.onhashchange = function() {
+    var hash = window.location.hash.substring(1);
+    if (hash && document.getElementById(hash)) {
+        showSection(hash);
+    }
+};
+</script>
+
 </body>
-</html> Get all links with data-section attribute
-        const sectionLinks = document.querySelectorAll('[data-section]');
-        
-        // Add click event to each link
-        sectionLinks.forEach(function(link) {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const sectionId = this.getAttribute('data-section');
-                showSection(sectionId);
-            });
-        });
-        
-        // Function to show selected section and hide others
-        function showSection(sectionId) {
-            // Hide all sections
-            document.querySelectorAll('section').forEach(function(section) {
-                section.classList.remove('active');
-                section.style.display = 'none'; // Explicitly hide all sections
-            });
-            
-            // Show only the selected section
-            const selectedSection = document.getElementById(sectionId);
-            if (selectedSection) {
-                selectedSection.classList.add('active');
-                selectedSection.style.display = 'block'; // Explicitly show selected section
-            }
-            
-            // Update URL hash
-            window.location.hash = sectionId;
-        }
-        
-        // Function to handle hash changes
-        function handleHash() {
-            const hash = window.location.hash.substring(1);
-            if (hash && document.getElementById(hash)) {
-                showSection(hash);
-            } else {
-                showSection('home');
-            }
-        }
-        
-        //
+</html>
