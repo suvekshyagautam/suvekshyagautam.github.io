@@ -364,17 +364,17 @@
     <div class="container">
       <header>
     <div class="logo">
-        <a href="#" onclick="showSection('home', event)">Suvekshya Gautam</a>
+        <a href="#home" data-section="home">Suvekshya Gautam</a>
     </div>
     <nav>
         <ul>
-            <li><a href="#" onclick="showSection('home', event)">Home</a></li>
-            <li><a href="#" onclick="showSection('research', event)">Research</a></li>
-            <li><a href="#" onclick="showSection('teaching', event)">Teaching</a></li>
-            <li><a href="#" onclick="showSection('experience', event)">Experience</a></li>
-            <li><a href="#" onclick="showSection('outdoors', event)">Outdoors</a></li>
-            <li><a href="#" onclick="showSection('contact', event)">Contact</a></li>
-            <li><a href="#" onclick="showSection('cv', event)">CV</a></li>
+            <li><a href="#home" data-section="home">Home</a></li>
+            <li><a href="#research" data-section="research">Research</a></li>
+            <li><a href="#teaching" data-section="teaching">Teaching</a></li>
+            <li><a href="#experience" data-section="experience">Experience</a></li>
+            <li><a href="#outdoors" data-section="outdoors">Outdoors</a></li>
+            <li><a href="#contact" data-section="contact">Contact</a></li>
+            <li><a href="#cv" data-section="cv">CV</a></li>
         </ul>
     </nav>
 </header>
@@ -688,50 +688,54 @@
     </footer>
     
     <script>
-    // Function to show selected section and hide others
-    function showSection(sectionId, event) {
-        // Prevent default behavior first
-        if (event) {
-            event.preventDefault();
-        }
+    document.addEventListener('DOMContentLoaded', function() {
+        // Check hash on page load
+        handleHash();
         
-        // Hide all sections
-        document.querySelectorAll('section').forEach(function(section) {
-            section.classList.remove('active');
-        });
-        
-        // Show the selected section
-        document.getElementById(sectionId).classList.add('active');
-        
-        // Update URL hash for better navigation
-        window.location.hash = sectionId;
-    }
-
-    // Function to check URL hash on page load and show the appropriate section
-    function checkHash() {
-        var hash = window.location.hash.substring(1);
-        if (hash && document.getElementById(hash)) {
-            // Hide all sections
-            document.querySelectorAll('section').forEach(function(section) {
-                section.classList.remove('active');
-            });
-            
-            // Show the section corresponding to the hash
-            document.getElementById(hash).classList.add('active');
-        }
-    }
-
-    // Check hash on page load
-    window.addEventListener('load', function() {
-        checkHash();
-    });
-
-    // Listen for hash changes
-    window.addEventListener('hashchange', function() {
-        checkHash();
+        // Listen for hash changes
+        window.addEventListener('hashchange', handleHash);
     });
     </script>
 </body>
-</html>
-    
-
+</html> Get all links with data-section attribute
+        const sectionLinks = document.querySelectorAll('[data-section]');
+        
+        // Add click event to each link
+        sectionLinks.forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const sectionId = this.getAttribute('data-section');
+                showSection(sectionId);
+            });
+        });
+        
+        // Function to show selected section and hide others
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('section').forEach(function(section) {
+                section.classList.remove('active');
+                section.style.display = 'none'; // Explicitly hide all sections
+            });
+            
+            // Show only the selected section
+            const selectedSection = document.getElementById(sectionId);
+            if (selectedSection) {
+                selectedSection.classList.add('active');
+                selectedSection.style.display = 'block'; // Explicitly show selected section
+            }
+            
+            // Update URL hash
+            window.location.hash = sectionId;
+        }
+        
+        // Function to handle hash changes
+        function handleHash() {
+            const hash = window.location.hash.substring(1);
+            if (hash && document.getElementById(hash)) {
+                showSection(hash);
+            } else {
+                showSection('home');
+            }
+        }
+        
+        //
