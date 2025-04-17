@@ -731,49 +731,6 @@ window.onhashchange = function() {
         showSection(hash);
     }
 };
-<script>
-// Function to show selected section and hide others
-function showSection(sectionId, event) {
-    // Prevent default behavior
-    if (event) {
-        event.preventDefault();
-    }
-    
-    // Hide all sections
-    var sections = document.querySelectorAll('section');
-    for (var i = 0; i < sections.length; i++) {
-        sections[i].classList.remove('active');
-        sections[i].style.display = 'none';
-    }
-    
-    // Show only the selected section
-    var selectedSection = document.getElementById(sectionId);
-    if (selectedSection) {
-        selectedSection.classList.add('active');
-        selectedSection.style.display = 'block';
-    }
-    
-    // Update URL hash
-    window.location.hash = sectionId;
-}
-
-// Handle initial page load
-window.onload = function() {
-    var hash = window.location.hash.substring(1);
-    if (hash && document.getElementById(hash)) {
-        showSection(hash);
-    } else {
-        showSection('home');
-    }
-};
-
-// Handle hash changes
-window.onhashchange = function() {
-    var hash = window.location.hash.substring(1);
-    if (hash && document.getElementById(hash)) {
-        showSection(hash);
-    }
-};
 </script>
 
 </body>
