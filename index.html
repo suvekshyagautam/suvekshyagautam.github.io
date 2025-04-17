@@ -710,4 +710,34 @@
     </footer>
     
     <script>
-        // Function to show
+        // Function to show selected section and hide others
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('section').forEach(function(section) {
+                section.classList.remove('active');
+            });
+            
+            // Show the selected section
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Update URL hash for better navigation (optional)
+window.location.hash = sectionId;
+        }
+        
+        // Function to check URL hash on page load and show the appropriate section
+        function checkHash() {
+            var hash = window.location.hash.substring(1);
+            if (hash) {
+                showSection(hash);
+            }
+        }
+        
+        // Check hash on page load
+        window.addEventListener('load', function() {
+            checkHash();
+        });
+        
+        // Listen for hash changes
+        window.addEventListener('hashchange', function() {
+            checkHash();
+        });
