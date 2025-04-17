@@ -28,11 +28,11 @@
             text-decoration: underline;
         }
         
-        /* Container */
+        /* Container - MODIFIED: Reduced top padding so header is visible */
         .container {
             max-width: 900px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 10px 20px 40px 20px; /* Reduced top padding from 40px to 10px */
         }
         
         /* Header & Navigation */
@@ -41,7 +41,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px 0;
-            margin-bottom: 60px;
+            margin-bottom: 40px; /* Reduced from 60px to 40px */
         }
         
         .logo a {
@@ -59,10 +59,14 @@
             margin-left: 30px;
         }
         
+        nav ul li a {
+            font-size: 16px;
+        }
+        
         nav ul li a:hover {
-    color: #2c65a6; /* Darker version of the tab color */
-    text-decoration: underline;
-}
+            color: #2c65a6;
+            text-decoration: underline;
+        }
         
         /* Section Styles */
         section {
@@ -88,21 +92,26 @@
             font-weight: 600;
         }
         
-        /* Home Section */
+        /* Home Section - MODIFIED: Changed layout to center photo */
         #home {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 40px;
-            flex-direction: row-reverse; /* Image on the right, content on the left for desktop */
+            gap: 30px;
+            text-align: center;
         }
         
         .profile-content {
-    flex: 1;
-    text-align: center; /* Add this line to center the text */
-}
+            flex: 1;
+            text-align: center;
+            width: 100%;
+        }
         
         .profile-image {
             flex-shrink: 0;
+            /* Center the image */
+            display: flex;
+            justify-content: center;
         }
         
         .profile-image img {
@@ -114,13 +123,13 @@
         }
         
         .home-text p {
-    font-size: 18px;
-    max-width: 600px;
-    margin-bottom: 20px;
-    margin-left: auto; /* Add this line */
-    margin-right: auto; /* Add this line */
-    text-align: justify; /* Add this line for justified text */
-}
+            font-size: 18px;
+            max-width: 600px;
+            margin-bottom: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: justify;
+        }
         
         .home-links a {
             margin-right: 20px;
@@ -342,12 +351,8 @@
                 margin-left: 0;
             }
             
-       #home {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    flex-direction: row-reverse; /* Image on the right, content on the left for desktop */
-}
+            /* No need to modify #home for mobile since we're now using the same 
+               column layout for both desktop and mobile */
             
             .home-links {
                 display: flex;
