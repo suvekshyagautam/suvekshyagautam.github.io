@@ -92,6 +92,7 @@
             display: flex;
             align-items: center;
             gap: 40px;
+            flex-direction: row-reverse; /* Image on the right, content on the left for desktop */
         }
         
         .profile-content {
@@ -336,15 +337,10 @@
                 margin-left: 0;
             }
             
-          #home {
-    flex-direction: column;
-    text-align: center;
-}
-
-.profile-image {
-    margin-bottom: 30px;
-    order: -1; /* This moves the image to the top */
-}
+            #home {
+                flex-direction: column; /* Stack vertically on mobile */
+                text-align: center;
+            }
             
             .home-links {
                 display: flex;
@@ -369,22 +365,25 @@
     <div class="container">
       <header>
     <div class="logo">
-        <a href="#home" data-section="home">Suvekshya Gautam</a>
+        <a href="#" onclick="showSection('home', event)">Suvekshya Gautam</a>
     </div>
     <nav>
         <ul>
-            <li><a href="#home" data-section="home">Home</a></li>
-            <li><a href="#research" data-section="research">Research</a></li>
-            <li><a href="#teaching" data-section="teaching">Teaching</a></li>
-            <li><a href="#experience" data-section="experience">Experience</a></li>
-            <li><a href="#outdoors" data-section="outdoors">Outdoors</a></li>
-            <li><a href="#contact" data-section="contact">Contact</a></li>
-            <li><a href="#cv" data-section="cv">CV</a></li>
+            <li><a href="#" onclick="showSection('home', event)">Home</a></li>
+            <li><a href="#" onclick="showSection('research', event)">Research</a></li>
+            <li><a href="#" onclick="showSection('teaching', event)">Teaching</a></li>
+            <li><a href="#" onclick="showSection('experience', event)">Experience</a></li>
+            <li><a href="#" onclick="showSection('outdoors', event)">Outdoors</a></li>
+            <li><a href="#" onclick="showSection('contact', event)">Contact</a></li>
+            <li><a href="#" onclick="showSection('cv', event)">CV</a></li>
         </ul>
     </nav>
 </header>
         
         <section id="home" class="active">
+            <div class="profile-image">
+                <img src="assets/profile_pic.jpg" alt="Suvekshya Gautam">
+            </div>
             <div class="profile-content">
                 <h1>Suvekshya Gautam</h1>
                 <div class="home-text">
@@ -395,9 +394,6 @@
                 <div class="home-links">
                     <a href="mailto:sgautam9@uw.edu">Email me</a>
                 </div>
-            </div>
-            <div class="profile-image">
-                <img src="assets/profile_pic.jpg" alt="Suvekshya Gautam">
             </div>
         </section>
         
@@ -692,6 +688,49 @@
         <p>© 2025 Suvekshya Gautam. All rights reserved.</p>
     </footer>
     
+<script>
+// Function to show selected section and hide others
+function showSection(sectionId, event) {
+    // Prevent default behavior
+    if (event) {
+        event.preventDefault();
+    }
+    
+    // Hide all sections
+    var sections = document.querySelectorAll('section');
+    for (var i = 0; i < sections.length; i++) {
+        sections[i].classList.remove('active');
+        sections[i].style.display = 'none';
+    }
+    
+    // Show only the selected section
+    var selectedSection = document.getElementById(sectionId);
+    if (selectedSection) {
+        selectedSection.classList.add('active');
+        selectedSection.style.display = 'block';
+    }
+    
+    // Update URL hash
+    window.location.hash = sectionId;
+}
+
+// Handle initial page load
+window.onload = function() {
+    var hash = window.location.hash.substring(1);
+    if (hash && document.getElementById(hash)) {
+        showSection(hash);
+    } else {
+        showSection('home');
+    }
+};
+
+// Handle hash changes
+window.onhashchange = function() {
+    var hash = window.location.hash.substring(1);
+    if (hash && document.getElementById(hash)) {
+        showSection(hash);
+    }
+};
 <script>
 // Function to show selected section and hide others
 function showSection(sectionId, event) {
