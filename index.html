@@ -705,3 +705,43 @@ function showSection(sectionId, event) {
     var sections = document.querySelectorAll('section');
     for (var i = 0; i < sections.length; i++) {
         sections[i].classList.remove('active');
+        sections[i].style.display = 'none';
+    }
+    
+// Show only the selected section
+    var selectedSection = document.getElementById(sectionId);
+    if (selectedSection) {
+        selectedSection.classList.add('active');
+        selectedSection.style.display = 'block';
+    }
+    
+    // Update URL hash but prevent automatic scrolling
+    history.pushState(null, null, '#' + sectionId);
+}
+
+// Handle initial page load
+window.onload = function() {
+    // Remove hash from URL to prevent automatic scrolling
+    if (window.location.hash) {
+        var hash = window.location.hash.substring(1);
+        // Remove hash from URL without triggering scroll
+        history.pushState("", document.title, window.location.pathname);
+        // Then show the section
+        if (hash && document.getElementById(hash)) {
+            showSection(hash);
+        } else {
+            showSection('home');
+        }
+    } else {
+        showSection('home');
+    }
+    
+    // Scroll to top of page
+    window.scrollTo(0, 0);
+};
+
+// Don't use onhashchange since we're using pushState
+</script>
+
+</body>
+</html>
