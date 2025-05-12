@@ -401,7 +401,7 @@
             <div class="profile-content">
                 <div class="home-text">
                     <p>Hello! I am a PhD candidate in Economics at the University of Washington – Seattle, specializing in Development Economics. My research agenda is motivated by a central question: how can rigorous empirical methods be leveraged to inform policies that reduce economic inequalities and expand opportunity?</p>
-                    <p>I bring over seven years of experience conducting field research, designing impact evaluations, and working with both experimental and observational data. My work spans low- and middle-income countries—where I examine issues related to financial inclusion, labor markets, and women’s empowerment—as well as the U.S. context, where I use large-scale administrative data to study education policy, academic mobility, and long-run labor market outcomes.</p>
+                    <p>I bring over seven years of experience conducting field research, designing impact evaluations, and working with both experimental and observational data. My work spans low- and middle-income countries—where I examine issues related to financial inclusion, labor markets, and women's empowerment—as well as the U.S. context, where I use large-scale administrative data to study education policy, academic mobility, and long-run labor market outcomes.</p>
                     <p>Methodologically, I apply a range of causal inference tools, including randomized experiments, difference-in-differences, and high-dimensional fixed effects models, to answer policy-relevant questions. My goal is to produce research that advances scholarly understanding while offering practical insights for improving socioeconomic outcomes in diverse contexts.</p>
                 </div>
                 <div class="home-links">
@@ -571,7 +571,7 @@
         <div class="experience-company">Colorado Center on Law and Policy – Denver, CO</div>
         <div class="experience-duration">November 2019 – March 2020</div>
         <div class="experience-description">
-            <p>Developed and led a mixed-methods research project on women’s economic security, funded by the Women’s Foundation of Colorado. Conducted policy reviews and data analysis to highlight systemic barriers to economic opportunity for women in Colorado.</p>
+            <p>Developed and led a mixed-methods research project on women's economic security, funded by the Women's Foundation of Colorado. Conducted policy reviews and data analysis to highlight systemic barriers to economic opportunity for women in Colorado.</p>
         </div>
     </div>
 
@@ -580,7 +580,7 @@
         <div class="experience-company">UNESCO South Asia Regional Office – New Delhi, India</div>
         <div class="experience-duration">July 2017 – May 2018</div>
         <div class="experience-description">
-            <p>Contributed to regional monitoring for SDG 4 by analyzing education policies across eight SAARC countries. Developed simulation models to estimate Bhutan’s education financing gap, supporting grant proposals for education sector programs.</p>
+            <p>Contributed to regional monitoring for SDG 4 by analyzing education policies across eight SAARC countries. Developed simulation models to estimate Bhutan's education financing gap, supporting grant proposals for education sector programs.</p>
         </div>
     </div>
 
@@ -591,7 +591,7 @@
         <div class="experience-description">
             <p>Led field research and co-authored studies on post-earthquake health services and female returnee migrants. Published policy reports informed government reintegration efforts, including:</p>
             <ul>
-                <li><a href="https://ceslam.org/our-publications/womens-integration-into-the-labour-market-a-comparative-study-of-migrant-returnees-and-non-migrants" target="_blank">Women’s Integration into the Labour Market</a></li>
+                <li><a href="https://ceslam.org/our-publications/womens-integration-into-the-labour-market-a-comparative-study-of-migrant-returnees-and-non-migrants" target="_blank">Women's Integration into the Labour Market</a></li>
                 <li><a href="https://ceslam.org/our-publications/returning-home-challenges-and-opportunities-for-women-migrant-workers-in-the-nepali-labour-market/" target="_blank">Returning Home: Challenges and Opportunities for Women Migrant Workers</a></li>
             </ul>
         </div>
@@ -605,7 +605,7 @@
             </div>
             
             <div class="outdoors-text">
-                <p>Beyond research and academia, I find joy and balance in the outdoors. Whether hiking alpine trails, camping under the stars, or paddle boarding on a quiet lake, being in nature is my favorite way to recharge. I especially love capturing these moments through photography—whether it’s a moody coastline, a wildflower-filled meadow, or a misty morning on the water. While I’ve spent a lot of time exploring the Pacific Northwest, my adventures have taken me far beyond—on mountain passes, forest trails, and remote campsites across different landscapes. These moments fuel both my creativity and clarity, and remind me of the bigger picture. Here are a few snapshots from my favorite hikes, paddling trips, and camping escapes.</p>
+                <p>Beyond research and academia, I find joy and balance in the outdoors. Whether hiking alpine trails, camping under the stars, or paddle boarding on a quiet lake, being in nature is my favorite way to recharge. I especially love capturing these moments through photography—whether it's a moody coastline, a wildflower-filled meadow, or a misty morning on the water. While I've spent a lot of time exploring the Pacific Northwest, my adventures have taken me far beyond—on mountain passes, forest trails, and remote campsites across different landscapes. These moments fuel both my creativity and clarity, and remind me of the bigger picture. Here are a few snapshots from my favorite hikes, paddling trips, and camping escapes.</p>
             </div>
             
             <div class="photos-grid">
@@ -637,8 +637,7 @@
                     <img src="assets/Manitoba Incline.jpg" alt="Fall colors">
                     <div class="photo-caption">Manitou Incline</div>
                 </div>
-            </div>
-                     <div class="photo-item">
+                <div class="photo-item">
                     <img src="assets/wildflowers.jpg" alt="wf">
                     <div class="photo-caption">Chasing Wildflowers- Eastern Washington</div>
                 </div>
@@ -706,43 +705,3 @@ function showSection(sectionId, event) {
     var sections = document.querySelectorAll('section');
     for (var i = 0; i < sections.length; i++) {
         sections[i].classList.remove('active');
-        sections[i].style.display = 'none';
-    }
-    
-    // Show only the selected section
-    var selectedSection = document.getElementById(sectionId);
-    if (selectedSection) {
-        selectedSection.classList.add('active');
-        selectedSection.style.display = 'block';
-    }
-    
-    // Update URL hash but prevent automatic scrolling
-    history.pushState(null, null, '#' + sectionId);
-}
-
-// Handle initial page load
-window.onload = function() {
-    // Remove hash from URL to prevent automatic scrolling
-    if (window.location.hash) {
-        var hash = window.location.hash.substring(1);
-        // Remove hash from URL without triggering scroll
-        history.pushState("", document.title, window.location.pathname);
-        // Then show the section
-        if (hash && document.getElementById(hash)) {
-            showSection(hash);
-        } else {
-            showSection('home');
-        }
-    } else {
-        showSection('home');
-    }
-    
-    // Scroll to top of page
-    window.scrollTo(0, 0);
-};
-
-// Don't use onhashchange since we're using pushState
-</script>
-
-</body>
-</html>
